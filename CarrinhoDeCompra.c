@@ -48,8 +48,7 @@ void adicionarCarrinho(produto catalogo[], int tamanhoCatalogo, carrinho *compra
             for (int j = 0; j < compras->qtdItens; j++) {
                 if (compras->itens[j].p.codigo == codigo) {
                     compras->itens[j].quantidade += quantidade;
-                    printf("%d unidade(s) de %s adicionada(s) ao carrinho!\n",
-                           quantidade, catalogo[i].nome);
+                    printf("%d unidade(s) de %s adicionada(s) ao carrinho!\n", quantidade, catalogo[i].nome);
                     return;
                 }
             }
@@ -58,8 +57,7 @@ void adicionarCarrinho(produto catalogo[], int tamanhoCatalogo, carrinho *compra
             compras->itens[compras->qtdItens].quantidade = quantidade;
             compras->qtdItens++;
 
-            printf("%d unidade(s) de %s adicionada(s) ao carrinho!\n",
-                   quantidade, catalogo[i].nome);
+            printf("%d unidade(s) de %s adicionada(s) ao carrinho!\n", quantidade, catalogo[i].nome);
             return;
         }
     }
@@ -93,11 +91,7 @@ void salvarCompra(carrinho compras, float totalFinal) {
     fprintf(arquivo, "---- NOVA COMPRA ----\n");
 
     for (int i = 0; i < compras.qtdItens; i++) {
-        fprintf(arquivo, "%s | Qtd: %d | Preço: %.2f | Subtotal: %.2f\n",
-                compras.itens[i].p.nome,
-                compras.itens[i].quantidade,
-                compras.itens[i].p.preco,
-                compras.itens[i].quantidade * compras.itens[i].p.preco);
+        fprintf(arquivo, "%s | Qtd: %d | Preço: %.2f | Subtotal: %.2f\n", compras.itens[i].p.nome, compras.itens[i].quantidade, compras.itens[i].p.preco, compras.itens[i].quantidade * compras.itens[i].p.preco);
     }
 
     fprintf(arquivo, "TOTAL FINAL: R$ %.2f\n", totalFinal);
