@@ -83,7 +83,7 @@ void exibirCarrinho(carrinho compras) {
 }
 
 void salvarCompra(carrinho compras, float totalFinal) {
-    FILE *arquivo = fopen("compras.txt", "a"); // "a" = append (não sobrescreve)
+    FILE *arquivo = fopen("compras.txt", "a");
 
     if (arquivo == NULL) {
         printf("Erro ao abrir arquivo!\n");
